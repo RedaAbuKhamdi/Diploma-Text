@@ -1,19 +1,44 @@
-\documentclass{extarticle}
-\usepackage[utf8]{inputenc}  
+\documentclass[14pt]{extarticle}  % 14 пт — как по ГОСТ
+
+% Кодировки и язык
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
 \usepackage{csquotes}
-\usepackage[T2A]{fontenc}   
-\usepackage[russian]{babel} 
+
+% ГОСТ-библиография
 \usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
 \addbibresource{references.bib}
 
+% Стандартные математические пакеты
+\usepackage{amsmath, amssymb}
+
+% Шрифт Times New Roman
+\usepackage{mathptmx}
+
+% Межстрочный интервал 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Поля по ГОСТ
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=2cm]{geometry}
+
+% Абзацный отступ
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}  % Без вертикального отступа между абзацами
+
+% Выравнивание по ширине
+\sloppy  % уменьшает вероятность переполнения строк
+
+% Команды
 \newcommand\image{I^n_m}
 
 \begin{document}
 
-\tableofcontents  
+\tableofcontents
 
-\include{chapter1}  
-\include{chapter2}  
+\include{chapter1}
+\include{chapter2}
 
 \printbibliography
 
