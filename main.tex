@@ -6,6 +6,22 @@
 \usepackage[russian]{babel}
 \usepackage{csquotes}
 
+% Изображения
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{float}
+\usepackage{caption} 
+
+\captionsetup[figure]{
+    labelsep=space,           % Разделитель между номером и текстом — пробел
+    name=Рисунок,             % Замена "Figure" на "Рисунок"
+    labelfont=bf,             % Жирный номер (не обязательно, но часто требуют)
+    textfont=normalfont,      % Обычный шрифт текста
+    justification=centering, % Центровка подписи
+    singlelinecheck=false     % Не выравнивать по центру, если одна строка
+}
+
 % ГОСТ-библиография
 \usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
 \addbibresource{references.bib}
@@ -14,7 +30,7 @@
 \usepackage{amsmath, amssymb}
 
 % Шрифт Times New Roman
-\usepackage{mathptmx}
+\usepackage{newtxtext,newtxmath}
 
 % Межстрочный интервал 1.5
 \usepackage{setspace}
@@ -32,6 +48,14 @@
 
 % Команды
 \newcommand\image{I^n_m}
+\newcommand\gostfigure[3] {
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{#1}
+        \caption{#2}
+        \label{fig:#3}
+    \end{figure}
+}
 
 \begin{document}
 
@@ -41,5 +65,4 @@
 \include{chapter2}
 
 \printbibliography
-
 \end{document}
