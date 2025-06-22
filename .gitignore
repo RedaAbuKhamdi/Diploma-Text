@@ -4,5 +4,6 @@
 !*.tex
 !*.pdf
 !references.bib
+!figures/*
 
 !*/
